@@ -6,17 +6,17 @@ images:
     repository: busybox
     tag: latest
   container:
-    repository: quay.io/simplyzee/kube-rclone
-    tag: v1.53.1
+    repository: rclone/rclone
+    tag: latest
   pullPolicy: IfNotPresent
 
 # imagePullSecrets:
 
 rclone:
   #  remote to mount from rclone config
-  remote: "gcache:"
+  remote: "Encrypt_gsuite:"
   # mount path for  remote
-  path: /mnt/disks/gdrive
+  path: /mnt/rclone/gsuite
   # read only file system for remote (to protect from deletion of files)
   readOnly: true
   # additional arguments for customising rclone
@@ -26,7 +26,7 @@ rclone:
     # - --dir-cache-time=72h
     # - --drive-chunk-size=256M
     # - --fast-list
-    # - --log-level=INFO
+    - --log-level=DEBUG
     # - --vfs-read-chunk-size=128M
     # - --vfs-read-chunk-size-limit=off
     # - --drive-acknowledge-abuse=true
