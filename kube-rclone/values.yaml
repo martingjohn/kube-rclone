@@ -26,7 +26,7 @@ rclone:
     # - --dir-cache-time=72h
     # - --drive-chunk-size=256M
     # - --fast-list
-    - --log-level=DEBUG
+    - --log-level=INFO
     # - --vfs-read-chunk-size=128M
     # - --vfs-read-chunk-size-limit=off
     # - --drive-acknowledge-abuse=true
