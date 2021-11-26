@@ -14,19 +14,28 @@ images:
 
 rclone:
   #  remote to mount from rclone config
-  remote: "Encrypt_gsuite:"
+  remote: "Encrypt_gsuite:Plex"
   # mount path for  remote
-  path: /mnt/rclone/gsuite
+  path: /mnt/rclone
   # read only file system for remote (to protect from deletion of files)
   readOnly: true
   # additional arguments for customising rclone
   # mount options can be found here - https://rclone.org/commands/rclone_mount/#options
   additionalArgs:
-    # - --buffer-size=1G
-    # - --dir-cache-time=72h
+    # - --buffer-size=100M
+    # - --vfs-cache-max-age=12h
+    # - --vfs-cache-mode=full
+    # - --vfs-cache-poll-interval=1m
+    # - --vfs-cache-max-size=500g
+    # - --cache-dir=/tmp
+    # - --timeout=1h
+    # - --poll-interval=15s
+    #
+    # - --dir-cache-time=1000h
     # - --drive-chunk-size=256M
     # - --fast-list
-    - --log-level=INFO
+    - --log-level=DEBUG
+    # - --log-level=INFO
     # - --vfs-read-chunk-size=128M
     # - --vfs-read-chunk-size-limit=off
     # - --drive-acknowledge-abuse=true
